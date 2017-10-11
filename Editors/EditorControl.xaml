@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="XMLtoSerializableClassGenerator.Editors.EditorControl" Margin="10"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:XMLtoSerializableClassGenerator.Editors"
+             mc:Ignorable="d" AllowDrop="True"
+             d:DesignHeight="300" d:DesignWidth="300">
+	
+    <Grid Background="Yellow" AllowDrop="True" MouseMove="Grid_MouseMove" DragDrop.PreviewDragEnter="Grid_PreviewDragEnter" DragDrop.DragOver="Grid_DragOver" DragDrop.Drop="Grid_Drop">
+    
+			
+			<CheckBox x:Name="cbIsDirty" Content="IsDirty" HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="96" Click="CheckBox_Click"/>
+        <TextBox x:Name="tbDropData" HorizontalAlignment="Left" Height="20" Margin="10,37,0,0" TextWrapping="Wrap" Text="Sakir Kaymakci" VerticalAlignment="Top" Width="144"/>
+
+    </Grid>
+</UserControl>
