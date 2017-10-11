@@ -2,7 +2,7 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="cbd91f27-a21c-4dae-9eb0-a7ee8a63f20d" Version="1.0" Language="de-DE" Publisher="Sakir Kaymakci" />
-        <DisplayName>XMLtoSerializableClassGenerator</DisplayName>
+        <DisplayName>EditorWithToolbox2017</DisplayName>
         <Description xml:space="preserve">Empty VSIX Project.</Description>
     </Metadata>
     <Installation>

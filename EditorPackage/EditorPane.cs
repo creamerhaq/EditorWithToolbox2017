@@ -10,11 +10,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using XMLtoSerializableClassGenerator.Editors;
-using XMLtoSerializableClassGenerator.Properties;
-using XMLtoSerializableClassGenerator.ToolboxItems;
+using EditorWithToolbox2017.Editors;
+using EditorWithToolbox2017.Properties;
+using EditorWithToolbox2017.ToolboxItems;
 
-namespace XMLtoSerializableClassGenerator.EditorPackage
+namespace EditorWithToolbox2017.EditorPackage
 {
 
 	public sealed class EditorPane : WindowPane, IVsPersistDocData, IPersistFileFormat, IVsToolboxUser, IVsToolboxActiveUserHook

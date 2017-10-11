@@ -13,10 +13,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using XMLtoSerializableClassGenerator.EditorPackage;
-using XMLtoSerializableClassGenerator.ToolboxItems;
+using EditorWithToolbox2017.EditorPackage;
+using EditorWithToolbox2017.ToolboxItems;
 
-namespace XMLtoSerializableClassGenerator.Editors
+namespace EditorWithToolbox2017.Editors
 {
 	/// <summary>
 	/// Interaktionslogik für EditorControl.xaml

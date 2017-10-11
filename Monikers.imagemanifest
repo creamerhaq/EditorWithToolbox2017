@@ -3,7 +3,7 @@
 <!-- Version: 14.0.50929.2 -->
 <ImageManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/VisualStudio/ImageManifestSchema/2014">
   <Symbols>
-    <String Name="Resources" Value="/XMLtoSerializableClassGenerator;Component/EditorPackage/Resources" />
+    <String Name="Resources" Value="/EditorWithToolbox2017;Component/EditorPackage/Resources" />
     <Guid Name="MonikersGuid" Value="{002dcbfc-a94e-446d-bfcc-635d53b0de15}" />
     <ID Name="sakir" Value="0" />
   </Symbols>

@@ -12,7 +12,7 @@ using Microsoft.VisualStudio;
 using System.Security.Permissions;
 using System.Runtime.InteropServices;
 
-namespace XMLtoSerializableClassGenerator.EditorPackage
+namespace EditorWithToolbox2017.EditorPackage
 {
     //[Guid(GuidStrings.GuidEditorFactory)]
     [ProvideView(LogicalView.Designer, null)]

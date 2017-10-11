@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace XMLtoSerializableClassGenerator.ToolboxItems
+namespace EditorWithToolbox2017.ToolboxItems
 {
     /// <summary>
     /// This class implements data to be stored in ToolboxItem.
