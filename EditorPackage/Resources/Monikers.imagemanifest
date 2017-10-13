@@ -4,12 +4,18 @@
 <ImageManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/VisualStudio/ImageManifestSchema/2014">
   <Symbols>
     <String Name="Resources" Value="/EditorWithToolbox2017;Component/EditorPackage/Resources" />
-    <Guid Name="MonikersGuid" Value="{002dcbfc-a94e-446d-bfcc-635d53b0de15}" />
+    <Guid Name="MonikersGuid" Value="{9b04f6dc-73ea-4b75-9e04-cbfe3530cb08}" />
     <ID Name="sakir" Value="0" />
+    <ID Name="sakir2" Value="1" />
   </Symbols>
   <Images>
     <Image Guid="$(MonikersGuid)" ID="$(sakir)">
       <Source Uri="$(Resources)/sakir.png">
+        <Size Value="32" />
+      </Source>
+    </Image>
+    <Image Guid="$(MonikersGuid)" ID="$(sakir2)">
+      <Source Uri="$(Resources)/sakir2.png">
         <Size Value="32" />
       </Source>
     </Image>

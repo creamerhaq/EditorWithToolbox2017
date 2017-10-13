@@ -213,7 +213,7 @@ namespace EditorWithToolbox2017.EditorPackage
 		{
 			ToolboxData myData = new ToolboxData("NotDefined");
 			ppOut = null;
-			
+
 			if (_selectedToolboxData == null)
 			{
 				return VSConstants.S_FALSE;
@@ -221,7 +221,7 @@ namespace EditorWithToolbox2017.EditorPackage
 			else
 			{
 				myData = (ToolboxData)_selectedToolboxData.GetData(typeof(ToolboxData));
-				
+
 			}
 
 
@@ -234,7 +234,7 @@ namespace EditorWithToolbox2017.EditorPackage
 		public int ToolboxSelectionChanged(IDataObject pSelected)
 		{
 			if (pSelected == null) return VSConstants.S_FALSE;
-			 _selectedToolboxData = (OleDataObject)pSelected;
+			_selectedToolboxData = (OleDataObject)pSelected;
 			ToolboxData data = (ToolboxData)_selectedToolboxData.GetData(typeof(ToolboxData));
 			editorControl.tbDropData.Text = data.Content;
 			return VSConstants.S_OK;
@@ -246,39 +246,39 @@ namespace EditorWithToolbox2017.EditorPackage
 		private void CreateToolboxData(string pToolboxItemName, string pData, string pTabInToolbox, bool pRemoveTabItems = false)
 		{
 
-			// Get an Hicon for myBitmap.
-			IntPtr Hicon = IntPtr.Zero;
-			try
-			{
-
-				// Get an Hicon for myBitmap.
-				
-				Hicon = Resources.cartForToolboxItem.GetHicon();
-				
-			}
-			catch (Exception ex)
-			{
-				
-			}
-
 			// Create the data object that will store the data for the menu item.
 			OleDataObject toolboxData = new OleDataObject();
 			toolboxData.SetData(typeof(ToolboxData), new ToolboxData(pData));
 			// Get the toolbox service
 			IVsToolbox toolbox = (IVsToolbox)GetService(typeof(SVsToolbox));
-			
+			//IVsToolbox2 vsToolbox2 = (IVsToolbox2)toolbox;
+			//IVsToolbox3 vsToolbox3 = (IVsToolbox3)vsToolbox2;
+
+
+			if (pRemoveTabItems)
+			{
+				bool succeed = ErrorHandler.Succeeded(toolbox.RemoveTab(pTabInToolbox));
+
+			}
+
 			// Create the array of TBXITEMINFO structures to describe the items
 			// we are adding to the toolbox.
 			TBXITEMINFO[] itemInfo = new TBXITEMINFO[1];
 			itemInfo[0].bstrText = pToolboxItemName;
-			itemInfo[0].hBmp = IntPtr.Zero; //Hicon;
-			itemInfo[0].dwFlags = (uint)__TBXITEMINFOFLAGS.TBXIF_IMAGEINDEX;
-			itemInfo[0].clrTransparent = (uint)Color.White.ToArgb();
-			itemInfo[0].iImageIndex = Hicon.ToInt32();
-			itemInfo[0].iImageWidth = 16;
+			itemInfo[0].clrTransparent = ColorToUInt(Color.Black);
+			itemInfo[0].hBmp = Resources.cartForToolboxItem.GetHbitmap();
+			itemInfo[0].dwFlags = (uint)__TBXITEMINFOFLAGS.TBXIF_DONTPERSIST;
+			//itemInfo[0].iImageIndex = 0;
+			//itemInfo[0].iImageWidth = 16;
 
 			ErrorHandler.ThrowOnFailure(toolbox.AddItem(toolboxData, itemInfo, pTabInToolbox));
 
+		}
+
+		private uint ColorToUInt(Color color)
+		{
+			return (uint)((color.A << 24) | (color.R << 16) |
+										(color.G << 8) | (color.B << 0));
 		}
 
 		public IVsStatusbar StatusBar

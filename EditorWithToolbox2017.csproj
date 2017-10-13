@@ -12,7 +12,8 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -72,18 +73,16 @@
     <Compile Include="ToolboxItems\ToolboxData.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="editorFileIcon.pkgdef">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="EditorPackage\Resources\editorFileIcon.pkgdef">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <None Include="Resources\cart_forToolboxItem.ico" />
-    <None Include="Resources\cartForToolboxItem.png" />
+    <Resource Include="EditorPackage\Resources\sakir2.png" />
+    <Content Include="EditorPackage\Resources\Monikers.imagemanifest">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <None Include="Resources\cartForToolboxItem.bmp" />
     <Content Include="ToolboxItems\ToolboxData.pkgdef">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <None Include="Key.snk" />
-    <Content Include="Monikers.imagemanifest">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <None Include="packages.config" />
@@ -212,11 +211,14 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="EditorPackage\Resources\EditorPackage.ico" />
-    <Resource Include="EditorPackage\Resources\sakir.png" />
+    <Resource Include="EditorPackage\Resources\sakir.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Page Include="Editors\EditorControl.xaml">
