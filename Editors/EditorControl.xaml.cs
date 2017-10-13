@@ -24,6 +24,7 @@ namespace EditorWithToolbox2017.Editors
 	public partial class EditorControl : UserControl
 	{
 		EditorPane editorPane;
+		Point startPoint;
 
 		public EditorControl()
 		{
