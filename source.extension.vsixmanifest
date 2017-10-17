@@ -3,7 +3,8 @@
     <Metadata>
         <Identity Id="cbd91f27-a21c-4dae-9eb0-a7ee8a63f20d" Version="1.0" Language="de-DE" Publisher="Sakir Kaymakci" />
         <DisplayName>EditorWithToolbox2017</DisplayName>
-        <Description xml:space="preserve">Empty VSIX Project.</Description>
+        <Description xml:space="preserve">Empty VSIX Project.
+</Description>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0]" />
@@ -18,5 +19,6 @@
     <Assets>
         <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
         <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" d:TargetPath="ItemTemplates\kaymakciFile.zip" />
     </Assets>
 </PackageManifest>

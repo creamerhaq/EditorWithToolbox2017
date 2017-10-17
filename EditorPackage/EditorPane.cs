@@ -74,6 +74,7 @@ namespace EditorWithToolbox2017.EditorPackage
 			switch (dwSave)
 			{
 				case VSSAVEFLAGS.VSSAVE_Save:
+					editorControl.cbIsDirty.IsChecked = false;
 					editorControl.IsDirty = false;
 					break;
 				case VSSAVEFLAGS.VSSAVE_SaveAs:

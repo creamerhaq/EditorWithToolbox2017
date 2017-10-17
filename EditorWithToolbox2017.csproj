@@ -45,6 +45,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CopyVsixExtensionFiles>False</CopyVsixExtensionFiles>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -77,8 +78,12 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Resource Include="EditorPackage\Resources\sakir2.png" />
-    <Content Include="EditorPackage\Resources\Monikers.imagemanifest">
+    <Content Include="Monikers.imagemanifest">
       <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ItemTemplates\kaymakciFile.zip">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\cartForToolboxItem.bmp" />
     <Content Include="ToolboxItems\ToolboxData.pkgdef">
@@ -216,9 +221,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="EditorPackage\Resources\EditorPackage.ico" />
-    <Resource Include="EditorPackage\Resources\sakir.png">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Resource>
+    <Resource Include="EditorPackage\Resources\sakir.png" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Editors\EditorControl.xaml">
@@ -240,6 +243,7 @@
       <ManifestResourceName>VSPackage</ManifestResourceName>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
