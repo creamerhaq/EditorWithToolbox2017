@@ -14,8 +14,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using EditorWithToolbox2017.EditorPackage;
-using EditorWithToolbox2017.ToolboxItems;
-
 namespace EditorWithToolbox2017.Editors
 {
 	/// <summary>
@@ -42,6 +40,7 @@ namespace EditorWithToolbox2017.Editors
 		{
 			IsDirty = (bool)cbIsDirty.IsChecked;
 		}
+
 
 		private void Grid_MouseMove(object sender, MouseEventArgs e)
 		{
@@ -76,6 +75,7 @@ namespace EditorWithToolbox2017.Editors
 			{
 				string str = e.Data.GetData(DataFormats.StringFormat) as string;
 				tbDropData.Text = str;
+				editorPane.TrackSelection();
 			}
 			e.Handled = true;
 		}

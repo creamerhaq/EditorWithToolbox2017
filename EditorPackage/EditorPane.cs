@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using EditorWithToolbox2017.Editors;
 using EditorWithToolbox2017.Properties;
 using EditorWithToolbox2017.ToolboxItems;
+using System.Windows.Controls;
 
 namespace EditorWithToolbox2017.EditorPackage
 {
@@ -24,6 +25,7 @@ namespace EditorWithToolbox2017.EditorPackage
 		EditorControl editorControl;
 		IVsStatusbar statusBar;
 		OleDataObject _selectedToolboxData;
+
 
 		protected override void Initialize()
 		{
@@ -242,7 +244,61 @@ namespace EditorWithToolbox2017.EditorPackage
 		}
 		#endregion
 
+
+
+		public TextBox SelectedTextBox;
+
+		#region TrackSelection 
+		private SelectionContainer mySelContainer;
+		private System.Collections.ArrayList mySelItems;
+		private IVsWindowFrame frame = null;
+
+		public void TrackSelection()
+		{
+			SelectedTextBox = editorControl.tbDropData;
+			if (frame == null)
+			{
+				var shell = GetService(typeof(SVsUIShell)) as IVsUIShell;
+				if (shell != null)
+				{
+					var guidPropertyBrowser = new
+					Guid(ToolWindowGuids.PropertyBrowser);
+					shell.FindToolWindow((uint)__VSFINDTOOLWIN.FTW_fForceCreate,
+					ref guidPropertyBrowser, out frame);
+				}
+			}
+			if (frame != null)
+			{
+				frame.Show();
+			}
+			if (mySelContainer == null)
+			{
+				mySelContainer = new SelectionContainer();
+			}
+
+			mySelItems = new System.Collections.ArrayList();
+
+			var selected = SelectedTextBox;
+			if (selected != null)
+			{
+				mySelItems.Add(selected);
+			}
+
+			mySelContainer.SelectedObjects = mySelItems;
+
+			ITrackSelection track = GetService(typeof(STrackSelection))
+															as ITrackSelection;
+			if (track != null)
+			{
+				track.OnSelectChange(mySelContainer);
+			}
+		}
+		#endregion
+
+
 		#region Methods
+
+
 
 		private void CreateToolboxData(string pToolboxItemName, string pData, string pTabInToolbox, bool pRemoveTabItems = false)
 		{
